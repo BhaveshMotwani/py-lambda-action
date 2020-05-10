@@ -1,5 +1,4 @@
 #!/bin/bash
-
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
