@@ -35,7 +35,8 @@ deploy_lambda_function(){
 }
 
 deploy_lambda_function_sam(){
-	sam build -t "${INPUT_TEMPLATE_FILE}"
+	sam build -t "${INPUT_TEMPLATE_FILE}" && sam local invoke --event ./events/test_event.json
+
 	sam deploy --stack-name "gw-authbridge" --s3-bucket "aws-sam-cli-managed-default-samclisourcebucket-w14e5f9zxk17" --capabilities "CAPABILITY_IAM"
 }
 
