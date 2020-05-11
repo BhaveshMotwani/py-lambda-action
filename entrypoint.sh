@@ -2,7 +2,6 @@
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
-	apt-get install swig libssl1.0-dev
 	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}"
 	zip -r dependencies.zip ./python
 }
