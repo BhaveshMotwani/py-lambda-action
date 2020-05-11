@@ -40,5 +40,5 @@ deploy_lambda_function_sam(){
 }
 
 
-deploy_lambda_function_sam()
+deploy_lambda_function_sam
 echo "Done."
