@@ -33,5 +33,11 @@ deploy_lambda_function(){
 	update_function_layers
 }
 
-deploy_lambda_function
+deploy_lambda_function_sam(){
+	sam build --use-container
+	sam deploy --region ap-south-1 --template-file template.yaml --stack-name gw-authbridge
+}
+
+
+deploy_lambda_function_sam
 echo "Done."
