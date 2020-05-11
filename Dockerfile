@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get install -y jq zip swig
 RUN pip install awscli
 RUN pip install aws-sam-cli
-RUN which openssl
+RUN ldd /usr/bin/openssl
 
 
 ADD entrypoint.sh /entrypoint.sh
