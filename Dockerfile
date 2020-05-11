@@ -1,7 +1,7 @@
 FROM python:3.6
 
 RUN apt-get update
-RUN apt-get install -y jq zip swig libssl1.1
+RUN apt-get install -y jq zip swig libssl1.0.0 libssl-dev
 RUN pip install awscli
 RUN pip install aws-sam-cli
 
