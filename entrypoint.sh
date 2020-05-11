@@ -35,7 +35,7 @@ deploy_lambda_function(){
 }
 
 deploy_lambda_function_sam(){
-	sam build --use-container -t "${INPUT_TEMPLATE_FILE}"
+	sam build -t "${INPUT_TEMPLATE_FILE}"
 	sam deploy --region ap-south-1 --template-file /github/workspace/template.yaml --stack-name gw-authbridge
 }
 
