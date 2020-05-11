@@ -36,7 +36,7 @@ deploy_lambda_function(){
 
 deploy_lambda_function_sam(){
 	sam build -t "${INPUT_TEMPLATE_FILE}" && sam package --s3-bucket "aws-sam-cli-managed-default-samclisourcebucket-w14e5f9zxk17"
-	sam deploy --region ap-south-1 --template-file "/github/workspace/template.yaml" --stack-name "gw-authbridge" --capabilities '["CAPABILITY_IAM"]'
+	sam deploy --template-file "/github/workspace/template.yaml" --stack-name "gw-authbridge" --s3-bucket "aws-sam-cli-managed-default-samclisourcebucket-w14e5f9zxk17" --capabilities ["CAPABILITY_IAM"]
 }
 
 
